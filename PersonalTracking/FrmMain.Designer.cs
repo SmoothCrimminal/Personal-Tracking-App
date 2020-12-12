@@ -32,7 +32,7 @@
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnPosition = new System.Windows.Forms.Button();
             this.btnDepartment = new System.Windows.Forms.Button();
-            this.btnPremission = new System.Windows.Forms.Button();
+            this.btnPermission = new System.Windows.Forms.Button();
             this.btnSalary = new System.Windows.Forms.Button();
             this.btnTasks = new System.Windows.Forms.Button();
             this.btnEmployee = new System.Windows.Forms.Button();
@@ -64,6 +64,7 @@
             this.btnLogout.Text = "Logout";
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnPosition
             // 
@@ -78,6 +79,7 @@
             this.btnPosition.Text = "Position";
             this.btnPosition.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnPosition.UseVisualStyleBackColor = false;
+            this.btnPosition.Click += new System.EventHandler(this.btnPosition_Click);
             // 
             // btnDepartment
             // 
@@ -92,20 +94,22 @@
             this.btnDepartment.Text = "Department";
             this.btnDepartment.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDepartment.UseVisualStyleBackColor = false;
+            this.btnDepartment.Click += new System.EventHandler(this.btnDepartment_Click);
             // 
-            // btnPremission
+            // btnPermission
             // 
-            this.btnPremission.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnPremission.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnPremission.Image = global::PersonalTracking.Properties.Resources.management;
-            this.btnPremission.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnPremission.Location = new System.Drawing.Point(12, 186);
-            this.btnPremission.Name = "btnPremission";
-            this.btnPremission.Size = new System.Drawing.Size(176, 139);
-            this.btnPremission.TabIndex = 3;
-            this.btnPremission.Text = "Premission";
-            this.btnPremission.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnPremission.UseVisualStyleBackColor = false;
+            this.btnPermission.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnPermission.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnPermission.Image = global::PersonalTracking.Properties.Resources.management;
+            this.btnPermission.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnPermission.Location = new System.Drawing.Point(12, 186);
+            this.btnPermission.Name = "btnPermission";
+            this.btnPermission.Size = new System.Drawing.Size(176, 139);
+            this.btnPermission.TabIndex = 3;
+            this.btnPermission.Text = "Permission";
+            this.btnPermission.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPermission.UseVisualStyleBackColor = false;
+            this.btnPermission.Click += new System.EventHandler(this.btnPermission_Click);
             // 
             // btnSalary
             // 
@@ -120,6 +124,7 @@
             this.btnSalary.Text = "Salary";
             this.btnSalary.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSalary.UseVisualStyleBackColor = false;
+            this.btnSalary.Click += new System.EventHandler(this.btnSalary_Click);
             // 
             // btnTasks
             // 
@@ -134,6 +139,7 @@
             this.btnTasks.Text = "Tasks";
             this.btnTasks.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnTasks.UseVisualStyleBackColor = false;
+            this.btnTasks.Click += new System.EventHandler(this.btnTasks_Click);
             // 
             // btnEmployee
             // 
@@ -148,6 +154,7 @@
             this.btnEmployee.Text = "Employee";
             this.btnEmployee.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEmployee.UseVisualStyleBackColor = false;
+            this.btnEmployee.Click += new System.EventHandler(this.btnEmployee_Click);
             // 
             // FrmMain
             // 
@@ -158,12 +165,13 @@
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnPosition);
             this.Controls.Add(this.btnDepartment);
-            this.Controls.Add(this.btnPremission);
+            this.Controls.Add(this.btnPermission);
             this.Controls.Add(this.btnSalary);
             this.Controls.Add(this.btnTasks);
             this.Controls.Add(this.btnEmployee);
             this.Name = "FrmMain";
             this.Text = "Employee Tracking";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMain_FormClosed);
             this.ResumeLayout(false);
 
         }
@@ -173,7 +181,7 @@
         private System.Windows.Forms.Button btnEmployee;
         private System.Windows.Forms.Button btnTasks;
         private System.Windows.Forms.Button btnSalary;
-        private System.Windows.Forms.Button btnPremission;
+        private System.Windows.Forms.Button btnPermission;
         private System.Windows.Forms.Button btnDepartment;
         private System.Windows.Forms.Button btnPosition;
         private System.Windows.Forms.Button btnLogout;
