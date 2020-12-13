@@ -82,6 +82,7 @@
             this.btnSave.TabIndex = 2;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnClose
             // 
@@ -108,6 +109,7 @@
             this.Name = "FrmPosition";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Position";
+            this.Load += new System.EventHandler(this.FrmPosition_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

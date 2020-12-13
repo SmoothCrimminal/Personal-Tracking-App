@@ -26,3 +26,4 @@ C:\Users\lataw\source\repos\PersonalTracking\PersonalTracking\obj\Debug\Personal
 C:\Users\lataw\source\repos\PersonalTracking\PersonalTracking\obj\Debug\PersonalTracking.FrmSalary.resources
 C:\Users\lataw\source\repos\PersonalTracking\PersonalTracking\obj\Debug\PersonalTracking.FrmSalaryList.resources
 C:\Users\lataw\source\repos\PersonalTracking\PersonalTracking\obj\Debug\PersonalTracking.FrmTask.resources
+C:\Users\lataw\source\repos\PersonalTracking\PersonalTracking\bin\Debug\DAL.dll.config
