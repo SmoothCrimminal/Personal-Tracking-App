@@ -29,16 +29,20 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnApprove = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnNew = new System.Windows.Forms.Button();
-            this.btnDisaprpove = new System.Windows.Forms.Button();
-            this.pnlForAdmin = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtDayAmount = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbEnd = new System.Windows.Forms.RadioButton();
+            this.rbStartDate = new System.Windows.Forms.RadioButton();
+            this.dpEnd = new System.Windows.Forms.DateTimePicker();
+            this.dpStart = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.pnlForAdmin = new System.Windows.Forms.Panel();
             this.cmbPosition = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cmbDepartment = new System.Windows.Forms.ComboBox();
@@ -49,24 +53,22 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtUserNo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbDeliveryDate = new System.Windows.Forms.RadioButton();
-            this.rbStartDate = new System.Windows.Forms.RadioButton();
-            this.dpEnd = new System.Windows.Forms.DateTimePicker();
-            this.dpStart = new System.Windows.Forms.DateTimePicker();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtDayAmount = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnDisaprpove = new System.Windows.Forms.Button();
+            this.btnApprove = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnNew = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cmbState = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.pnlForAdmin.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.pnlForAdmin.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -79,93 +81,146 @@
             this.panel1.Size = new System.Drawing.Size(1056, 284);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
+            // panel3
             // 
-            this.panel2.Controls.Add(this.btnDisaprpove);
-            this.panel2.Controls.Add(this.btnApprove);
-            this.panel2.Controls.Add(this.btnClose);
-            this.panel2.Controls.Add(this.btnDelete);
-            this.panel2.Controls.Add(this.btnUpdate);
-            this.panel2.Controls.Add(this.btnNew);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 574);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1056, 168);
-            this.panel2.TabIndex = 0;
+            this.panel3.Controls.Add(this.cmbState);
+            this.panel3.Controls.Add(this.label10);
+            this.panel3.Controls.Add(this.btnClear);
+            this.panel3.Controls.Add(this.btnSearch);
+            this.panel3.Controls.Add(this.txtDayAmount);
+            this.panel3.Controls.Add(this.label9);
+            this.panel3.Controls.Add(this.groupBox1);
+            this.panel3.Controls.Add(this.dpEnd);
+            this.panel3.Controls.Add(this.dpStart);
+            this.panel3.Controls.Add(this.label8);
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(470, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(586, 284);
+            this.panel3.TabIndex = 1;
             // 
-            // dataGridView1
+            // btnClear
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 284);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1056, 290);
-            this.dataGridView1.TabIndex = 1;
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnClear.Location = new System.Drawing.Point(415, 214);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(129, 48);
+            this.btnClear.TabIndex = 4;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // btnApprove
+            // btnSearch
             // 
-            this.btnApprove.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnApprove.Location = new System.Drawing.Point(128, 17);
-            this.btnApprove.Name = "btnApprove";
-            this.btnApprove.Size = new System.Drawing.Size(139, 64);
-            this.btnApprove.TabIndex = 0;
-            this.btnApprove.Text = "Approve";
-            this.btnApprove.UseVisualStyleBackColor = true;
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSearch.Location = new System.Drawing.Point(415, 155);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(129, 48);
+            this.btnSearch.TabIndex = 3;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // btnClose
+            // txtDayAmount
             // 
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnClose.Location = new System.Drawing.Point(784, 51);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(139, 64);
-            this.btnClose.TabIndex = 5;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.txtDayAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtDayAmount.Location = new System.Drawing.Point(148, 173);
+            this.txtDayAmount.Multiline = true;
+            this.txtDayAmount.Name = "txtDayAmount";
+            this.txtDayAmount.Size = new System.Drawing.Size(232, 30);
+            this.txtDayAmount.TabIndex = 2;
+            this.txtDayAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDayAmount_KeyPress);
             // 
-            // btnDelete
+            // label9
             // 
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnDelete.Location = new System.Drawing.Point(618, 51);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(139, 64);
-            this.btnDelete.TabIndex = 4;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label9.Location = new System.Drawing.Point(10, 178);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(130, 25);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "Day Amount";
             // 
-            // btnUpdate
+            // groupBox1
             // 
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnUpdate.Location = new System.Drawing.Point(459, 51);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(139, 64);
-            this.btnUpdate.TabIndex = 3;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.groupBox1.Controls.Add(this.rbEnd);
+            this.groupBox1.Controls.Add(this.rbStartDate);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.groupBox1.Location = new System.Drawing.Point(399, 9);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(184, 144);
+            this.groupBox1.TabIndex = 21;
+            this.groupBox1.TabStop = false;
             // 
-            // btnNew
+            // rbEnd
             // 
-            this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnNew.Location = new System.Drawing.Point(300, 51);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(139, 64);
-            this.btnNew.TabIndex = 2;
-            this.btnNew.Text = "New";
-            this.btnNew.UseVisualStyleBackColor = true;
-            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            this.rbEnd.AutoSize = true;
+            this.rbEnd.Location = new System.Drawing.Point(6, 83);
+            this.rbEnd.Name = "rbEnd";
+            this.rbEnd.Size = new System.Drawing.Size(108, 24);
+            this.rbEnd.TabIndex = 1;
+            this.rbEnd.TabStop = true;
+            this.rbEnd.Text = "End Date";
+            this.rbEnd.UseVisualStyleBackColor = true;
             // 
-            // btnDisaprpove
+            // rbStartDate
             // 
-            this.btnDisaprpove.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnDisaprpove.Location = new System.Drawing.Point(128, 93);
-            this.btnDisaprpove.Name = "btnDisaprpove";
-            this.btnDisaprpove.Size = new System.Drawing.Size(139, 64);
-            this.btnDisaprpove.TabIndex = 1;
-            this.btnDisaprpove.Text = "Disapprove";
-            this.btnDisaprpove.UseVisualStyleBackColor = true;
+            this.rbStartDate.AutoSize = true;
+            this.rbStartDate.Location = new System.Drawing.Point(6, 27);
+            this.rbStartDate.Name = "rbStartDate";
+            this.rbStartDate.Size = new System.Drawing.Size(117, 24);
+            this.rbStartDate.TabIndex = 0;
+            this.rbStartDate.TabStop = true;
+            this.rbStartDate.Text = "Start Date";
+            this.rbStartDate.UseVisualStyleBackColor = true;
+            // 
+            // dpEnd
+            // 
+            this.dpEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dpEnd.Location = new System.Drawing.Point(104, 127);
+            this.dpEnd.Name = "dpEnd";
+            this.dpEnd.Size = new System.Drawing.Size(274, 26);
+            this.dpEnd.TabIndex = 1;
+            // 
+            // dpStart
+            // 
+            this.dpStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dpStart.Location = new System.Drawing.Point(104, 71);
+            this.dpStart.Name = "dpStart";
+            this.dpStart.Size = new System.Drawing.Size(274, 26);
+            this.dpStart.TabIndex = 0;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label8.Location = new System.Drawing.Point(17, 125);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(50, 25);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "End";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label7.Location = new System.Drawing.Point(17, 71);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(58, 25);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Start";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label6.Location = new System.Drawing.Point(17, 23);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(111, 25);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "Task Date";
             // 
             // pnlForAdmin
             // 
@@ -184,24 +239,6 @@
             this.pnlForAdmin.Name = "pnlForAdmin";
             this.pnlForAdmin.Size = new System.Drawing.Size(470, 284);
             this.pnlForAdmin.TabIndex = 0;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.btnClear);
-            this.panel3.Controls.Add(this.btnSearch);
-            this.panel3.Controls.Add(this.txtDayAmount);
-            this.panel3.Controls.Add(this.label9);
-            this.panel3.Controls.Add(this.groupBox1);
-            this.panel3.Controls.Add(this.dpEnd);
-            this.panel3.Controls.Add(this.dpStart);
-            this.panel3.Controls.Add(this.label8);
-            this.panel3.Controls.Add(this.label7);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(470, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(586, 284);
-            this.panel3.TabIndex = 1;
             // 
             // cmbPosition
             // 
@@ -299,124 +336,113 @@
             this.label1.TabIndex = 22;
             this.label1.Text = "UserNo";
             // 
-            // groupBox1
+            // panel2
             // 
-            this.groupBox1.Controls.Add(this.rbDeliveryDate);
-            this.groupBox1.Controls.Add(this.rbStartDate);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox1.Location = new System.Drawing.Point(399, 46);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(184, 144);
-            this.groupBox1.TabIndex = 21;
-            this.groupBox1.TabStop = false;
+            this.panel2.Controls.Add(this.btnDisaprpove);
+            this.panel2.Controls.Add(this.btnApprove);
+            this.panel2.Controls.Add(this.btnClose);
+            this.panel2.Controls.Add(this.btnDelete);
+            this.panel2.Controls.Add(this.btnUpdate);
+            this.panel2.Controls.Add(this.btnNew);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 574);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1056, 168);
+            this.panel2.TabIndex = 0;
             // 
-            // rbDeliveryDate
+            // btnDisaprpove
             // 
-            this.rbDeliveryDate.AutoSize = true;
-            this.rbDeliveryDate.Location = new System.Drawing.Point(6, 83);
-            this.rbDeliveryDate.Name = "rbDeliveryDate";
-            this.rbDeliveryDate.Size = new System.Drawing.Size(145, 24);
-            this.rbDeliveryDate.TabIndex = 1;
-            this.rbDeliveryDate.TabStop = true;
-            this.rbDeliveryDate.Text = "Delivery Date";
-            this.rbDeliveryDate.UseVisualStyleBackColor = true;
+            this.btnDisaprpove.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnDisaprpove.Location = new System.Drawing.Point(128, 93);
+            this.btnDisaprpove.Name = "btnDisaprpove";
+            this.btnDisaprpove.Size = new System.Drawing.Size(139, 64);
+            this.btnDisaprpove.TabIndex = 1;
+            this.btnDisaprpove.Text = "Disapprove";
+            this.btnDisaprpove.UseVisualStyleBackColor = true;
             // 
-            // rbStartDate
+            // btnApprove
             // 
-            this.rbStartDate.AutoSize = true;
-            this.rbStartDate.Location = new System.Drawing.Point(6, 27);
-            this.rbStartDate.Name = "rbStartDate";
-            this.rbStartDate.Size = new System.Drawing.Size(117, 24);
-            this.rbStartDate.TabIndex = 0;
-            this.rbStartDate.TabStop = true;
-            this.rbStartDate.Text = "Start Date";
-            this.rbStartDate.UseVisualStyleBackColor = true;
+            this.btnApprove.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnApprove.Location = new System.Drawing.Point(128, 17);
+            this.btnApprove.Name = "btnApprove";
+            this.btnApprove.Size = new System.Drawing.Size(139, 64);
+            this.btnApprove.TabIndex = 0;
+            this.btnApprove.Text = "Approve";
+            this.btnApprove.UseVisualStyleBackColor = true;
             // 
-            // dpEnd
+            // btnClose
             // 
-            this.dpEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dpEnd.Location = new System.Drawing.Point(104, 127);
-            this.dpEnd.Name = "dpEnd";
-            this.dpEnd.Size = new System.Drawing.Size(274, 26);
-            this.dpEnd.TabIndex = 1;
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnClose.Location = new System.Drawing.Point(784, 51);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(139, 64);
+            this.btnClose.TabIndex = 5;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // dpStart
+            // btnDelete
             // 
-            this.dpStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dpStart.Location = new System.Drawing.Point(104, 71);
-            this.dpStart.Name = "dpStart";
-            this.dpStart.Size = new System.Drawing.Size(274, 26);
-            this.dpStart.TabIndex = 0;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnDelete.Location = new System.Drawing.Point(618, 51);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(139, 64);
+            this.btnDelete.TabIndex = 4;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
             // 
-            // label8
+            // btnUpdate
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label8.Location = new System.Drawing.Point(17, 125);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(50, 25);
-            this.label8.TabIndex = 20;
-            this.label8.Text = "End";
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnUpdate.Location = new System.Drawing.Point(459, 51);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(139, 64);
+            this.btnUpdate.TabIndex = 3;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // label7
+            // btnNew
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.Location = new System.Drawing.Point(17, 71);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(58, 25);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "Start";
+            this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnNew.Location = new System.Drawing.Point(300, 51);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(139, 64);
+            this.btnNew.TabIndex = 2;
+            this.btnNew.Text = "New";
+            this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
-            // label6
+            // dataGridView1
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(17, 23);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(111, 25);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "Task Date";
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 284);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(1056, 290);
+            this.dataGridView1.TabIndex = 1;
             // 
-            // txtDayAmount
+            // label10
             // 
-            this.txtDayAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtDayAmount.Location = new System.Drawing.Point(148, 173);
-            this.txtDayAmount.Multiline = true;
-            this.txtDayAmount.Name = "txtDayAmount";
-            this.txtDayAmount.Size = new System.Drawing.Size(232, 30);
-            this.txtDayAmount.TabIndex = 2;
-            this.txtDayAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDayAmount_KeyPress);
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label10.Location = new System.Drawing.Point(10, 226);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(63, 25);
+            this.label10.TabIndex = 27;
+            this.label10.Text = "State";
             // 
-            // label9
+            // cmbState
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label9.Location = new System.Drawing.Point(10, 178);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(130, 25);
-            this.label9.TabIndex = 24;
-            this.label9.Text = "Day Amount";
-            // 
-            // btnClear
-            // 
-            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnClear.Location = new System.Drawing.Point(415, 214);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(129, 48);
-            this.btnClear.TabIndex = 4;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnSearch.Location = new System.Drawing.Point(269, 214);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(129, 48);
-            this.btnSearch.TabIndex = 3;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.cmbState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cmbState.FormattingEnabled = true;
+            this.cmbState.Location = new System.Drawing.Point(148, 218);
+            this.cmbState.Name = "cmbState";
+            this.cmbState.Size = new System.Drawing.Size(230, 33);
+            this.cmbState.TabIndex = 28;
             // 
             // FrmPermissionList
             // 
@@ -429,15 +455,16 @@
             this.Name = "FrmPermissionList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Permission List";
+            this.Load += new System.EventHandler(this.FrmPermissionList_Load);
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.pnlForAdmin.ResumeLayout(false);
-            this.pnlForAdmin.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.pnlForAdmin.ResumeLayout(false);
+            this.pnlForAdmin.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -468,7 +495,7 @@
         private System.Windows.Forms.TextBox txtDayAmount;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton rbDeliveryDate;
+        private System.Windows.Forms.RadioButton rbEnd;
         private System.Windows.Forms.RadioButton rbStartDate;
         private System.Windows.Forms.DateTimePicker dpEnd;
         private System.Windows.Forms.DateTimePicker dpStart;
@@ -477,5 +504,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.ComboBox cmbState;
+        private System.Windows.Forms.Label label10;
     }
 }

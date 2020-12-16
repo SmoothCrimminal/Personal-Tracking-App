@@ -99,7 +99,7 @@ namespace PersonalTracking
             {
                 EMPLOYEE employee = new EMPLOYEE();
                 employee.UserNo = Convert.ToInt32(txtUserNo.Text);
-                employee.Password = txtPassword.Text;
+                employee.Password = PasswordEncryption.CreateMD5Hash(txtPassword.Text);
                 employee.isAdmin = chAdmin.Checked;
                 employee.Name = txtName.Text;
                 employee.Surname = txtSurname.Text;

@@ -33,7 +33,7 @@
             this.dpStart = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dpEnd = new System.Windows.Forms.DateTimePicker();
             this.txtDayAmount = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtExplanation = new System.Windows.Forms.TextBox();
@@ -69,6 +69,7 @@
             this.dpStart.Name = "dpStart";
             this.dpStart.Size = new System.Drawing.Size(259, 23);
             this.dpStart.TabIndex = 1;
+            this.dpStart.ValueChanged += new System.EventHandler(this.dpStart_ValueChanged);
             // 
             // label8
             // 
@@ -90,13 +91,14 @@
             this.label7.TabIndex = 21;
             this.label7.Text = "Start Date";
             // 
-            // dateTimePicker1
+            // dpEnd
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(150, 154);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(259, 23);
-            this.dateTimePicker1.TabIndex = 2;
+            this.dpEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dpEnd.Location = new System.Drawing.Point(150, 154);
+            this.dpEnd.Name = "dpEnd";
+            this.dpEnd.Size = new System.Drawing.Size(259, 23);
+            this.dpEnd.TabIndex = 2;
+            this.dpEnd.ValueChanged += new System.EventHandler(this.dpEnd_ValueChanged);
             // 
             // txtDayAmount
             // 
@@ -157,6 +159,7 @@
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // FrmPermission
             // 
@@ -169,7 +172,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtDayAmount);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dpEnd);
             this.Controls.Add(this.dpStart);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -177,6 +180,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmPermission";
             this.Text = "Permission";
+            this.Load += new System.EventHandler(this.FrmPermission_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,7 +193,7 @@
         private System.Windows.Forms.DateTimePicker dpStart;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dpEnd;
         private System.Windows.Forms.TextBox txtDayAmount;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtExplanation;

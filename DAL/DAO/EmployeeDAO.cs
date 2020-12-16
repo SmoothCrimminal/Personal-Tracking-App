@@ -70,6 +70,20 @@ namespace DAL.DAO
             return employeeList;
         }
 
+        public static List<EMPLOYEE> GetEmployees(int userNo, string password)
+        {
+            try
+            {
+                List<EMPLOYEE> list = db.EMPLOYEE.Where(x => x.UserNo == userNo && x.Password == password).ToList();
+                return list;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public static List<EMPLOYEE> GetUsers(int v)
         {
             return db.EMPLOYEE.Where(x => x.UserNo == v).ToList();

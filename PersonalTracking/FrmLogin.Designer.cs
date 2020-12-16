@@ -72,13 +72,15 @@
             this.txtPassword.Location = new System.Drawing.Point(143, 106);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(169, 30);
             this.txtPassword.TabIndex = 1;
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             // 
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnLogin.Location = new System.Drawing.Point(31, 209);
+            this.btnLogin.Location = new System.Drawing.Point(238, 203);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(136, 65);
             this.btnLogin.TabIndex = 3;
@@ -89,7 +91,7 @@
             // btnExit
             // 
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnExit.Location = new System.Drawing.Point(234, 209);
+            this.btnExit.Location = new System.Drawing.Point(45, 203);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(136, 65);
             this.btnExit.TabIndex = 2;

@@ -40,5 +40,10 @@ namespace PersonalTracking
                 txtDepartment.Clear();
             }
         }
+
+        private void FrmDepartment_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
