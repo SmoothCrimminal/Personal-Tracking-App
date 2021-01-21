@@ -26,6 +26,8 @@ namespace PersonalTracking
         }
         TaskDTO dto = new TaskDTO();
         private bool comboFull = false;
+        public bool isUpdated = false;
+        public TaskDetailDTO detail = new TaskDetailDTO();
 
         private void FrmTask_Load(object sender, EventArgs e)
         {
@@ -59,10 +61,21 @@ namespace PersonalTracking
             cmbDepartment.SelectedIndex = -1;
             cmbPosition.SelectedIndex = -1;
             comboFull = true;
-            cmbTaskState.DataSource = dto.Taskstates;
-            cmbTaskState.DisplayMember = "StateName";
-            cmbTaskState.ValueMember = "ID";
-            cmbTaskState.SelectedIndex = -1;
+
+            if (isUpdated)
+            {
+                label9.Visible = true;
+                cmbTaskState.Visible = true;
+                txtName.Text = detail.Name;
+                txtSurname.Text = detail.Surname;
+                txtContent.Text = detail.Content;
+                txtTitle.Text = detail.Content;
+                txtUserNo.Text = detail.UserNo.ToString();
+                cmbTaskState.DataSource = dto.Taskstates;
+                cmbTaskState.DisplayMember = "StateName";
+                cmbTaskState.ValueMember = "ID";
+                cmbTaskState.SelectedIndex = -1;
+            }
 
         }
 
@@ -104,15 +117,38 @@ namespace PersonalTracking
                 MessageBox.Show("Please enter task explanation");
             else
             {
-                task.TaskTitle = txtTitle.Text;
-                task.TaskContent = txtContent.Text;
-                task.TaskStartDate = DateTime.Today;
-                task.TaskState = 1;
-                TaskBLL.AddTask(task);
-                MessageBox.Show("Task added successfully!");
-                txtTitle.Clear();
-                txtContent.Clear();
-                task = new TASK();
+                if (!isUpdated)
+                {
+                    task.TaskTitle = txtTitle.Text;
+                    task.TaskContent = txtContent.Text;
+                    task.TaskStartDate = DateTime.Today;
+                    task.TaskState = 1;
+                    TaskBLL.AddTask(task);
+                    MessageBox.Show("Task added successfully!");
+                    txtTitle.Clear();
+                    txtContent.Clear();
+                    task = new TASK();
+                }
+
+                else if (isUpdated)
+                {
+                    DialogResult dialogResult = MessageBox.Show("Are you sure?", "Warning", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        TASK update = new TASK();
+                        update.ID = detail.TaskID;
+                        if (Convert.ToInt32(txtUserNo.Text) != detail.UserNo)
+                            update.EmpolyeeID = task.EmpolyeeID;
+                        else
+                            update.EmpolyeeID = detail.EmployeeID;
+                        update.TaskTitle = txtTitle.Text;
+                        update.TaskContent = txtContent.Text;
+                        update.TaskState = Convert.ToInt32(cmbTaskState.SelectedValue);
+                        TaskBLL.UpdateTask(update);
+                        MessageBox.Show("Task updated!");
+                        this.Close();
+                    }
+                }
             }
         }
     }

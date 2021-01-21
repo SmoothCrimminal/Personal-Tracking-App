@@ -47,10 +47,20 @@ namespace PersonalTracking
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            FrmPermission frm = new FrmPermission();
-            this.Hide();
-            frm.ShowDialog();
-            this.Visible = true;
+            if (detail.PermissionID == 0)
+                MessageBox.Show("Please select a permission from table!");
+            else
+            {
+                FrmPermission frm = new FrmPermission();
+                frm.isUpdated = true;
+                frm.detail = detail;
+                this.Hide();
+                frm.ShowDialog();
+                this.Visible = true;
+                FillAllData();
+                ClearFilters();
+            }
+            
         }
         PermissionDTO dto = new PermissionDTO();
         private bool comboFull = false;
@@ -91,6 +101,7 @@ namespace PersonalTracking
             dataGridView1.Columns[12].Visible = false;
             dataGridView1.Columns[11].HeaderText = "State";
             dataGridView1.Columns[13].Visible = false;
+            dataGridView1.Columns[14].Visible = false;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -141,6 +152,34 @@ namespace PersonalTracking
             cmbState.SelectedIndex = -1;
             txtDayAmount.Clear();
             dataGridView1.DataSource = dto.PermissionDetails;
+        }
+
+        PermissionDetailDTO detail = new PermissionDetailDTO();
+        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            detail.PermissionID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[14].Value);
+            detail.StartDate = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[8].Value);
+            detail.EndDate = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[9].Value);
+            detail.Explanation = dataGridView1.Rows[e.RowIndex].Cells[13].Value.ToString();
+            detail.UserNo = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value);
+            detail.State = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[12].Value);
+            detail.PermissionDayAmount = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[10].Value);
+        }
+
+        private void btnApprove_Click(object sender, EventArgs e)
+        {
+            PermissionBLL.UpdatePermission(detail.PermissionID, PermissionStates.Approved);
+            MessageBox.Show("Approved!");
+            FillAllData();
+            ClearFilters();
+        }
+
+        private void btnDisaprpove_Click(object sender, EventArgs e)
+        {
+            PermissionBLL.UpdatePermission(detail.PermissionID, PermissionStates.Disapproved);
+            MessageBox.Show("Disapproved!");
+            FillAllData();
+            ClearFilters();
         }
     }
 }

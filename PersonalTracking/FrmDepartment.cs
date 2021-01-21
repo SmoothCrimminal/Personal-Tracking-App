@@ -34,16 +34,34 @@ namespace PersonalTracking
             else
             {
                 DEPARTMENT department = new DEPARTMENT();
-                department.DepartamentName = txtDepartment.Text;
-                BLL.DepartmentBLL.AddDepartment(department);
-                MessageBox.Show("Department added!");
-                txtDepartment.Clear();
+                if (!isUpdated)
+                {
+                    department.DepartamentName = txtDepartment.Text;
+                    BLL.DepartmentBLL.AddDepartment(department);
+                    MessageBox.Show("Department added!");
+                    txtDepartment.Clear();
+                }
+                else
+                {
+                    DialogResult dialogResult = MessageBox.Show("Are you sure?", "Warning", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        department.ID = detail.ID;
+                        department.DepartamentName = txtDepartment.Text;
+                        DepartmentBLL.UpdateDepartment(department);
+                        MessageBox.Show("Department updated!");
+                        this.Close();
+                    }
+
+                }
             }
         }
-
+        public bool isUpdated = false;
+        public DEPARTMENT detail = new DEPARTMENT();
         private void FrmDepartment_Load(object sender, EventArgs e)
         {
-
+            if (isUpdated)
+                txtDepartment.Text = detail.DepartamentName;
         }
     }
 }

@@ -26,44 +26,59 @@ namespace PersonalTracking
         }
         SalaryDTO dto = new SalaryDTO();
         private bool comboFull = false;
+        public SalaryDetailDTO detail = new SalaryDetailDTO();
+        public bool isUpdated = false;
 
         private void FrmSalary_Load(object sender, EventArgs e)
         {
             dto = SalaryBLL.GetAll();
-            dataGridView1.DataSource = dto.Employees;
-            dataGridView1.Columns[0].Visible = false;
-            dataGridView1.Columns[1].HeaderText = "User No";
-            dataGridView1.Columns[2].HeaderText = "Name";
-            dataGridView1.Columns[3].HeaderText = "Surname";
-            dataGridView1.Columns[4].Visible = false;
-            dataGridView1.Columns[5].Visible = false;
-            dataGridView1.Columns[6].Visible = false;
-            dataGridView1.Columns[7].Visible = false;
-            dataGridView1.Columns[8].Visible = false;
-            dataGridView1.Columns[9].Visible = false;
-            dataGridView1.Columns[10].Visible = false;
-            dataGridView1.Columns[11].Visible = false;
-            dataGridView1.Columns[12].Visible = false;
-            dataGridView1.Columns[13].Visible = false;
+            if (!isUpdated)
+            {
+                dataGridView1.DataSource = dto.Employees;
+                dataGridView1.Columns[0].Visible = false;
+                dataGridView1.Columns[1].HeaderText = "User No";
+                dataGridView1.Columns[2].HeaderText = "Name";
+                dataGridView1.Columns[3].HeaderText = "Surname";
+                dataGridView1.Columns[4].Visible = false;
+                dataGridView1.Columns[5].Visible = false;
+                dataGridView1.Columns[6].Visible = false;
+                dataGridView1.Columns[7].Visible = false;
+                dataGridView1.Columns[8].Visible = false;
+                dataGridView1.Columns[9].Visible = false;
+                dataGridView1.Columns[10].Visible = false;
+                dataGridView1.Columns[11].Visible = false;
+                dataGridView1.Columns[12].Visible = false;
+                dataGridView1.Columns[13].Visible = false;
 
-            comboFull = false;
-            cmbDepartment.DataSource = dto.Departments;
-            cmbDepartment.DisplayMember = "DepartamentName";
-            cmbDepartment.ValueMember = "ID";
-            cmbPosition.DataSource = dto.Positions;
-            cmbPosition.DisplayMember = "Position1";
-            cmbPosition.ValueMember = "ID";
-            cmbDepartment.SelectedIndex = -1;
-            cmbPosition.SelectedIndex = -1;
-            if (dto.Departments.Count > 0)
-                comboFull = true;
+                comboFull = false;
+                cmbDepartment.DataSource = dto.Departments;
+                cmbDepartment.DisplayMember = "DepartamentName";
+                cmbDepartment.ValueMember = "ID";
+                cmbPosition.DataSource = dto.Positions;
+                cmbPosition.DisplayMember = "Position1";
+                cmbPosition.ValueMember = "ID";
+                cmbDepartment.SelectedIndex = -1;
+                cmbPosition.SelectedIndex = -1;
+                if (dto.Departments.Count > 0)
+                    comboFull = true;
+            }
             cmbMonth.DataSource = dto.Months;
             cmbMonth.DisplayMember = "MonthName";
             cmbMonth.ValueMember = "ID";
             cmbMonth.SelectedIndex = -1;
+            if (isUpdated)
+            {
+                panel1.Hide();
+                txtName.Text = detail.Name;
+                txtSurname.Text = detail.Surname;
+                txtSalary.Text = detail.SalaryAmount.ToString();
+                txtYear.Text = detail.SalaryYear.ToString();
+                cmbMonth.SelectedValue = detail.MonthID;
+            }
         }
 
         SALARY salary = new SALARY();
+        int oldSalary = 0;
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (txtYear.Text.Trim() == "")
@@ -76,13 +91,43 @@ namespace PersonalTracking
                 MessageBox.Show("Please select the employee");
             else
             {
-                salary.Year = Convert.ToInt32(txtYear.Text);
-                salary.MonthID = Convert.ToInt32(cmbMonth.SelectedValue);
-                salary.Amount = Convert.ToInt32(txtSalary.Text);
-                SalaryBLL.AddSalary(salary);
-                MessageBox.Show("Salary added!");
-                cmbMonth.SelectedIndex = -1;
-                salary = new SALARY();
+                bool control = false;
+                if (!isUpdated)
+                {
+                    if (salary.EmployeeID == 0)
+                        MessageBox.Show("Please select the employee from the table");
+                    else
+                    {
+                        salary.Year = Convert.ToInt32(txtYear.Text);
+                        salary.MonthID = Convert.ToInt32(cmbMonth.SelectedValue);
+                        salary.Amount = Convert.ToInt32(txtSalary.Text);
+                        if (salary.Amount > oldSalary)
+                            control = true;
+                        SalaryBLL.AddSalary(salary, control);
+                        MessageBox.Show("Salary added!");
+                        cmbMonth.SelectedIndex = -1;
+                        salary = new SALARY();
+                    }
+                }
+                else
+                {
+                    DialogResult dialogResult = MessageBox.Show("Are you sure?", "title", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        SALARY salary = new SALARY();
+                        salary.ID = detail.SalaryID;
+                        salary.EmployeeID = detail.EmployeeID;
+                        salary.Year = Convert.ToInt32(txtYear.Text);
+                        salary.MonthID = Convert.ToInt32(cmbMonth.SelectedValue);
+                        salary.Amount = Convert.ToInt32(txtSalary.Text);
+                        if (salary.Amount > detail.OldSalary)
+                            control = true;
+                        SalaryBLL.UpdateSalary(salary, control);
+                        MessageBox.Show("Salary updated!");
+                        this.Close();
+                    }
+                }
+                
             }
         }
 
@@ -94,6 +139,7 @@ namespace PersonalTracking
             txtYear.Text = DateTime.Today.Year.ToString();
             txtSalary.Text = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
             salary.EmployeeID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+            oldSalary = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[8].Value);
         }
 
     } 

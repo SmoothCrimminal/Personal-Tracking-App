@@ -30,6 +30,8 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.cmbState = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtDayAmount = new System.Windows.Forms.TextBox();
@@ -61,8 +63,6 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label10 = new System.Windows.Forms.Label();
-            this.cmbState = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -100,6 +100,25 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(586, 284);
             this.panel3.TabIndex = 1;
+            // 
+            // cmbState
+            // 
+            this.cmbState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cmbState.FormattingEnabled = true;
+            this.cmbState.Location = new System.Drawing.Point(148, 218);
+            this.cmbState.Name = "cmbState";
+            this.cmbState.Size = new System.Drawing.Size(230, 33);
+            this.cmbState.TabIndex = 28;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label10.Location = new System.Drawing.Point(10, 226);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(63, 25);
+            this.label10.TabIndex = 27;
+            this.label10.Text = "State";
             // 
             // btnClear
             // 
@@ -359,6 +378,7 @@
             this.btnDisaprpove.TabIndex = 1;
             this.btnDisaprpove.Text = "Disapprove";
             this.btnDisaprpove.UseVisualStyleBackColor = true;
+            this.btnDisaprpove.Click += new System.EventHandler(this.btnDisaprpove_Click);
             // 
             // btnApprove
             // 
@@ -369,6 +389,7 @@
             this.btnApprove.TabIndex = 0;
             this.btnApprove.Text = "Approve";
             this.btnApprove.UseVisualStyleBackColor = true;
+            this.btnApprove.Click += new System.EventHandler(this.btnApprove_Click);
             // 
             // btnClose
             // 
@@ -424,25 +445,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1056, 290);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label10.Location = new System.Drawing.Point(10, 226);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(63, 25);
-            this.label10.TabIndex = 27;
-            this.label10.Text = "State";
-            // 
-            // cmbState
-            // 
-            this.cmbState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.cmbState.FormattingEnabled = true;
-            this.cmbState.Location = new System.Drawing.Point(148, 218);
-            this.cmbState.Name = "cmbState";
-            this.cmbState.Size = new System.Drawing.Size(230, 33);
-            this.cmbState.TabIndex = 28;
+            this.dataGridView1.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowEnter);
             // 
             // FrmPermissionList
             // 

@@ -36,20 +36,28 @@ namespace PersonalTracking
             this.Hide();
             frm.ShowDialog();
             this.Visible = true;
+            FillAllData();
+            ClearFilters();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            FrmEmployee frm = new FrmEmployee();
-            this.Hide();
-            frm.ShowDialog();
-            this.Visible = true;
+            if (detail.EmployeeID == 0)
+                MessageBox.Show("Please select Employee from the table!");
+            else
+            {
+                FrmEmployee frm = new FrmEmployee();
+                frm.isUpdated = true;
+                frm.detail = detail;
+                this.Hide();
+                frm.ShowDialog();
+                this.Visible = true;
+                FillAllData();
+                ClearFilters();
+            }
         }
 
-        EmployeeDTO dto = new EmployeeDTO();
-        private bool comboFull = false;
-
-        private void FrmEmployeeList_Load(object sender, EventArgs e)
+        void FillAllData()
         {
             dto = EmployeeBLL.GetAll();
             dataGridView1.DataSource = dto.Employees;
@@ -79,6 +87,15 @@ namespace PersonalTracking
             comboFull = true;
         }
 
+        EmployeeDTO dto = new EmployeeDTO();
+        private bool comboFull = false;
+        EmployeeDetailDTO detail = new EmployeeDetailDTO();
+
+        private void FrmEmployeeList_Load(object sender, EventArgs e)
+        {
+            FillAllData();
+        }
+
         private void cmbDepartment_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboFull)
@@ -105,6 +122,11 @@ namespace PersonalTracking
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            ClearFilters();
+        }
+
+        private void ClearFilters()
+        {
             txtUserNo.Clear();
             txtName.Clear();
             txtSurname.Clear();
@@ -114,6 +136,22 @@ namespace PersonalTracking
             cmbPosition.SelectedIndex = -1;
             comboFull = true;
             dataGridView1.DataSource = dto.Employees;
+        }
+
+        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            detail.Name = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            detail.Surname = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            detail.Password = dataGridView1.Rows[e.RowIndex].Cells[12].Value.ToString();
+            detail.ImagePath = dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString();
+            detail.Address = dataGridView1.Rows[e.RowIndex].Cells[11].Value.ToString();
+            detail.isAdmin = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[9].Value);
+            detail.Birthday = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[13].Value);
+            detail.UserNo = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value);
+            detail.DepartmentID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[6].Value);
+            detail.PositionID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[7].Value);
+            detail.EmployeeID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+            detail.Salary = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[8].Value);
         }
     }
 }
