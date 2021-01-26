@@ -71,5 +71,10 @@ namespace PersonalTracking
             if (e.KeyCode == Keys.Enter)
                 loginLogic();
         }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

@@ -27,3 +27,5 @@ C:\Users\lataw\source\repos\PersonalTracking\PersonalTracking\obj\Debug\Personal
 C:\Users\lataw\source\repos\PersonalTracking\PersonalTracking\obj\Debug\PersonalTracking.FrmSalaryList.resources
 C:\Users\lataw\source\repos\PersonalTracking\PersonalTracking\obj\Debug\PersonalTracking.FrmTask.resources
 C:\Users\lataw\source\repos\PersonalTracking\PersonalTracking\bin\Debug\DAL.dll.config
+C:\Users\lataw\source\repos\PersonalTracking\PersonalTracking\bin\Debug\Policy.14.0.Microsoft.Office.Interop.Excel.dll
+C:\Users\lataw\source\repos\PersonalTracking\PersonalTracking\bin\Debug\Policy.14.0.Microsoft.Office.Interop.Excel.config
